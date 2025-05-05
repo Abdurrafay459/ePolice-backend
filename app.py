@@ -3,11 +3,13 @@ from db_config import configure_database, initialize_database
 
 from incidents import incidents_blueprint
 from reporter import reporters_blueprint
+from responder import responder_blueprint
 
 app = Flask(__name__)
 
 app.register_blueprint(incidents_blueprint)
 app.register_blueprint(reporters_blueprint)
+app.register_blueprint(responder_blueprint)
 
 @app.route('/')
 def home():
